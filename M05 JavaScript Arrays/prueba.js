@@ -69,3 +69,12 @@ function devolverPrimerElemento(array) {
     // Tu código:
     return palabras.join('')
  }
+
+ switch (num) {
+   case 10:
+      
+      break;
+ 
+   default:
+      break;
+ }

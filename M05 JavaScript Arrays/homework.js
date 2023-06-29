@@ -81,11 +81,10 @@ function promedioResultadosTest(resultadosTest) {
    // El parámetro "resultadosTest" es un arreglo de números.
    // Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.
    // Tu código:
-   let suma = 0;
+   var suma = 0;
    for (let i = 0; i < resultadosTest.length; i++) {
-      suma += resultadosTest[i]
+     suma = suma + resultadosTest[i]
    }
-
    return suma/resultadosTest.length
 }
 
@@ -132,7 +131,13 @@ function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
-
+   if(num !== 0){
+      var numToArray = num.toString().split('')
+      if(numToArray[0] === '9') return true
+      return false
+   }else{
+      return 'Enter a valid number'
+   } 
 }
 
 function todosIguales(array) {
@@ -150,19 +155,42 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
-   
+   const mesesPedidos = ["Enero", "Marzo", "Noviembre"];
+   const mesesEncontrados = [];
+
+   for (let i = 0; i < array.length; i++) {
+    if (mesesPedidos.includes(array[i])) {
+      mesesEncontrados.push(array[i]);
+    }
+  }
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   const tabla = [];
+
+  for (let i = 0; i <= 10; i++) {
+    tabla.push(6 * i);
+  }
+
+  return tabla;
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   const mayoresACien = [];
+
+   for (let i = 0; i < array.length; i++) {
+     if (array[i] > 100) {
+       mayoresACien.push(array[i]);
+     }
+   }
+ 
+   return mayoresACien;
 }
 
 /* ----------------------------------------------------------------------------------
@@ -176,6 +204,26 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   var resultado = [];
+   let suma = num;
+
+ 
+   for (let i = 0; i < 10; i++) {
+      if (suma === i) {
+         // Interrumpir la ejecución utilizando break
+         break;
+       }
+      suma = suma + 2;
+      resultado.push(suma);
+      console.log(suma);
+   }
+
+ 
+   if (suma === resultado.length) {
+     return "Se interrumpió la ejecución";
+   } else {
+     return resultado;
+   }
 }
 
 function continueStatement(num) {
@@ -185,6 +233,20 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   const resultado = [];
+   let suma = num;
+
+   for (let i = 0; i < 10; i++) {
+    if (i === 5) {
+      // No se suma en la iteración 5 utilizando continue
+      continue;
+    }
+
+    suma += 2;
+    resultado.push(suma);
+  }
+
+  return resultado;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
